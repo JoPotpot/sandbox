@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %} Blog {% endblock%}
+{% block header %} Ici c'est le blog ! {% endblock%}
+
+{% block content %} 
+	<h2> Liste des derniers articles</h2>
+	{% for art in derniers_articles	%}
+		<div class='article'>  
+			<h3> {{art.titre}} <span class='infos'> le {{art.date|date:'DATE_FORMAT'}} </span> </h3>
+			<p> {{art.contenu|truncatewords_html:80}} </p>
+			<p> <a href='{% url "lire un article" id=art.id slug=art.slug %}'> Lire la suite</a></p>
+		</div>		
+	{% empty %}
+			<p> Aucun article </p>
+	{% endfor %}
+	
+{% endblock%}
+
+{% block right %}
+<p> <a href='{% url "nouvel article" %}'> Proposer un article</a></p>	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% comment %}
+{% load static %}
+	<p>
+		Fait à base de saucisses directement venues de la Réunion, ce Rougail-saucisse a récolté la note de 8,75/10 
+	</p>
+	<p>
+		<a href="{% url 'article' 3334 %}">Lien vers mon super article n° 3334 tronqué en 34</a>
+	</p>
+	<p>
+		<img src="{% static 'blog/rougail.jpg' %} " alt="Miam" style="width:20%">
+	</p>
+{% endcomment %}

@@ -1,0 +1,25 @@
+{# {% extends "mini_url.html" %} #}
+{% block content %} 
+
+
+
+
+
+{% if envoi %} 
+<h2> Nouvelle mini url ajoutée ! </h2>
+<form action="{% url 'form MiniUrl' %}" method='get'>
+	<input type='submit' value='Ajouter une nouvelle URL' />	
+</form>	
+{% else %}
+<h2> Nouvelle mini url</h2>
+	
+<form action="{% url 'form MiniUrl' %}" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Soumettre' />
+	
+</form>	
+{% endif %}
+
+{% endblock%}
+

@@ -1,0 +1,22 @@
+{# {% extends "mini_url.html" %} #}
+
+{% block content %} 
+
+<p> <a href='{% url "form MiniUrl" %}'> Raccourcir une URL</a></p>	
+
+<h2> Liste des URLs raccourcies</h2>
+	{% for url in Urls	%} 
+	<ul>
+		<li> '{{url.URL_longue}}' via
+			<a {# href='{{url.URL_longue}}'>
+				{{url.code}} </a>
+			{% if url.createur != '' %} par {{url.createur}} {% endif%} 
+			({{url.count}} accès)				
+		</li>	
+	</ul>		
+	{% empty %}
+	<p> Aucun enregistrement </p>
+	{% endfor %}
+
+	
+{% endblock%}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Blog {% endblock%}
+{% block header %} Ici c'est le blog ! {% endblock%}
+
+{% block content %} 
+
+{% if envoi %} Votre message a été envoyé ! {% endif %}
+
+<h2> Nouvelle fiche de contact</h2>
+
+{% if sauvegarde %}
+	<p>Ce contact a bien été enregistré. </p>
+{% else %}
+
+<form action="{% url 'fiche contact' %}" method='post', enctype='multipart/form-data'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Soumettre' />
+	
+</form>	
+	
+{% endif %}
+	
+{% endblock%}
+
+
+

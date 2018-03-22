@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Ruban vert ! {% endblock%}
+{% block header %} {% endblock%}
+{% block nav %} {% endblock %}
+{% block content %} 
+
+{% if envoi %} 
+<h2> Enregistrement ajouté ! </h2>
+<form action="{% url 'enregistrement' %}" method='get'>
+	<input type='submit' value='Ajouter un nouveau' />	
+</form>	
+{% else %}
+<h2> Nouvel enregistrement</h2>
+	
+<form action="{% url 'enregistrement' %}" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Soumettre' />
+	
+</form>	
+{% endif %}
+
+	
+{% endblock%}
+
+
+

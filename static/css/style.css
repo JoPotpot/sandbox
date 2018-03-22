@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+.head {
+  text-align: center;
+  width: 100%;
+  background-color: lightblue;
+  padding: 10px 15px;
+  margin-top: 7px;		
+}
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+.bottom {
+  background-color: lightblue;
+  float: left;
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 7px;		
+}
+
+body {
+    font-size: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.875em;
+}
+	
+h3 {
+    font-size: 1.5em;
+}
+	
+p {
+    font-size: 0.875em;
+}
+	
+div {
+    font-size: 0.875em;
+}
+
+.infos {
+	font-size: 0.625em;
+	
+}
+
+
+
+
+
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}

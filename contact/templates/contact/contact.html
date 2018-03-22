@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Contact {% endblock%}
+{% block header %} Formulaire de contact {% endblock%}
+
+{% block content %} 
+{% if envoi %} Votre message a été envoyé ! {% endif %}
+	
+<form action="{% url 'Contact' %}" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Submit' />
+	
+</form>	
+	
+{% endblock%}

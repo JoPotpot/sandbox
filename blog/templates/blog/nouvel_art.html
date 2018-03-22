@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Blog {% endblock%}
+{% block header %} Ici c'est le blog ! {% endblock%}
+
+{% block content %} 
+
+{% if envoi %} Votre message a été envoyé ! {% endif %}
+
+<h2> Nouvel article</h2>
+	
+<form action="{% url 'nouvel article' %}" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Soumettre' />
+	
+</form>	
+	
+{% endblock%}
+
+
+

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %} 
+	<div class="w3-container">
+		<h3>Liste des contacts</h3>
+	</div>
+	<div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+	{% for cont in contacts	%}
+		{% comment %}	
+		<div class="w3-half w3-margin-bottom">
+			<div class="w3-display-container">
+				<img src="{{cont.photo.url}}" alt="{{cont.nom}}" style="width:100%">
+				<span class="w3-display-bottomleft w3-padding">{{cont.nom}}</span>
+			</div>
+		</div>
+		{% endcomment %}
+		<div class="w3-third w3-margin-bottom">
+			<img src="{{cont.photo.url}}" alt="{{cont.nom}}" style="width:100%">
+			<div class="w3-container w3-white">
+				<h3>{{cont.nom}}</h3>
+				<h6 class="w3-opacity">{{cont.adresse}}</h6>
+				<a href='{% url "fiche contact" %}'><button class="w3-button w3-block w3-black w3-margin-bottom">modifier contact</button></a>
+		</div>
+		{% comment %}
+		<div class='article'>  
+			<h3> {{cont.nom}} </3>
+			<p> Adresse : {{cont.adresse}} </p>
+			<p> <img src='{{cont.photo.url}}' width='20%'> </p>
+		</div>	
+		{% endcomment %}
+	</div>
+	{% empty %}
+			<p> Aucun contact </p>
+	{% endfor %}
+	
+{% endblock%}
+
+{% block right %}
+<p> <a href='{% url "fiche contact" %}'> Proposer un contact</a></p>	
+{% endblock %}
+
+
+<div class="w3-container">
+    <h3>Our Hotels</h3>
+    <h6>You can find our hotels anywhere in the world:</h6>
+  </div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="/w3images/cinqueterre.jpg" alt="Cinque Terre" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding">Cinque Terre</span>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="/w3images/newyork2.jpg" alt="New York" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">New York</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">San Francisco</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="/w3images/pisa.jpg" alt="Pisa" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Pisa</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="/w3images/paris.jpg" alt="Paris" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Paris</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

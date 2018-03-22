@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Ruban vert ! {% endblock%}
+{% block header %} {% endblock%}
+{% block nav %} {% endblock %}
+
+
+{% block content %} 
+
+<h2> Liste des enregistrements</h2>
+	{% for enreg in enregistrements	%} 
+			<p> <a {# href='{% url "modifier enreg" id=enreg.id %}'>
+					{{enreg.nom}} {{enreg.prenom}} 
+				</a> {{enreg.nom}} {{enreg.prenom}} 
+				 | {{enreg.prix}} | {{enreg.type_loc}} | {{enreg.duree_loc}} 
+			</p>
+		</div>		
+	{% empty %}
+			<p> Aucun enregistrement </p>
+	{% endfor %}
+
+	
+{% endblock%}
