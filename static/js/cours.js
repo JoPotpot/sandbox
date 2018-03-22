@@ -7,3 +7,5 @@ var b = document.body;
 console.log(b.childNodes[2]);
 console.log(b.childNodes[2].childNodes[1]);
 console.log(b.childNodes[2].childNodes[1].length);
+
+// je tente le coup
